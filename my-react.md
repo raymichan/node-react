@@ -54,6 +54,10 @@ class Son extends Component {
 export default Son;
 ```
 
+## index.js引入各组件
+
+import TodoList from './TodoList'
+
 ## 3-5父传子 与 子传父
 
 ```js
@@ -485,6 +489,8 @@ github搜react-transition-group
 
 安装npm install react-transition-group --save，再点击下面有个CSSTransition
 
+### 单元素动画效果
+
 ```
 import React, { Component, Fragment } from 'react';
 //引用动画组件
@@ -506,8 +512,8 @@ render(){
                 in={this.state.show}==========让其知道是true/false，是入场状态还是出场状态
                 timeout={300}=================动画执行多久
                 classNames='fade'
-                unmountOnExit
-                appear={true}
+                unmountOnExit=================false的时候会移除动画元素
+                appear={true}=================首次默认（刷新）出现入场动画
             >
 				<div>包裹需要动画效果的标签<div>
 			</CSSTranstion>
@@ -550,3 +556,33 @@ fade-appear, and fade-appear-active
 }
 ```
 
+### 4-14列表元素动画效果
+
+import { CSSTransition,TransitionGroup } from 'react-transition-group';
+外层TransitionGroup标签，内层CSSTransition标签+key值
+
+## redux
+
+redux实际上是数据层的框架，它把所有的数据放在Store当中
+
+公用存储区域Store
+
+Redux = Reducer + Flux
+
+## UI框架
+
+### Ant Design
+
+https://ant.design/index-cn
+
+项目使用 npm 或 yarn 安装====npm install antd --save 
+
+重启服务器=================npm run start
+
+引入样式===================import 'antd/dist/antd.css' 
+
+接着需要什么组件就引入什么组件
+
+查找ctrl+F查找所需
+
+点击 <> show code
